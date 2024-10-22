@@ -1,0 +1,35 @@
+cd : change directory
+mkdir : make directory
+ls : list/view items in the current directory you are.
+ls -Force : TO view/list ALL Hidden files in the current diretory you are.
+New-Item -Path . -Name "filename.js" -ItemType "file" TO CREATE A FILE INSIDE YOUR FOLDER/DIRECTORY.
+code . : to open the folder you are in VISUAL STUDIO CODE.
+git init : TO CREATE A git LOCAL REPOSITORY (TO initialize a git repository)
+ls -Force : TO VIEW THE initialized git repository
+
+git init : WILL BE USED TO TRACK ALL OUR CHANGES, COMMIT OUR CHANGES AND TO PERFORM VERSION CONTROL.
+
+git status : TO SEE/VIEW WHAT IS IN THE STAGING AREA I.E the FILE you created AND IT WILL BE SHOWN IN RED COLOR.
+git add "filename" : TO ADD THE file to the STAGING AREA so we can start tracking CHANGES IN IT.
+git status : NOW, THE file HAS been successfully added to the STAGING AREA and we can now see it in GREEN COLOR.
+git commit -m "commit message; CONVENTION IS THAT IT MUST BE IN PRESENT TENSE E.G " : TO COMMIT THE FILE(S) IN THE STAGING AREA UNDER VERSION CONTROL.
+git log : TO SEE THE COMMIT YOU HAVE MADE
+
+TO ADD MORE THAN 1 FILE:
+New-Item -Path . -Name "filename1.js" -ItemType "file";New-Item -Path . -Name "filename2.js" -ItemType "file" // 2 NEW FILES WILL BE ADDED.
+git status : THE 2 NEW FILES WILL BE DISPLAYED IN RED COLOR MEANING THAT THEY ARE STILL IN THE STAGING AREA.
+git add . : TO ADD BOTH file1 and file 2 TO THE STAGING AREA. THIS IS USED FOR ADDING ALL THE FILES IN THE STAGING AREA INTO THE STAGING AREA, IT HELPS TO ADD ALL THE FILES INSTEAD OF JUST ADDING THEM 1 AFTER THE OTHER.
+git status : TO CHECK IF THE FILES HAVE BEEN SUCCESSFULLY ADDED TO THE STAGING AREA.
+git commit -m "commit message" : COMMIT THE FILES UNDER VERSION CONTROL...
+git log : TO SEE THE COMMIT WE HAVE MADE.
+
+IF PERHAPS WE MADE A CHANGE IN ONE OF OUR FILES AND WE ALREADY SAVED IT BUT WE WANT TO REVERT BACK TO THE OLD VERSION, THEN DO THIS:
+git diff "filename" : TO CHECK THE DIFFERENCES BETWEEN THE CURRENT VERSION OF filename AND THE LAST SAVED POINT OF chapter3.txt IN OUR git repository.
+git diff chapter3.txt : THE CURRENT VERSION IS SHOWN IN green color WHILE the OLD VERSION is shown in RED COLOR
+git checkout "filename" : THIS WILL ROLLBACK THE file TO THE LAST VERSION THAT WAS COMMITED IN OUR repository.
+git checkout chapter3.txt : ONCE WE CLICK ON ENTER, IT WILL REVERT BACK TO IT'S OLD VERSION
+git log : TO SEE THE COMMIT MADE.
+
+TO STAGE ALL FILES EXCEPT A PARTICULAR FILE: To add all files except chapter4.txt in Git, you can use the following commands in VS Code's terminal:
+git add . ":!filename = chapter4.txt" : Stage all files except filename.
+git add . ":!chapter4.txt"
