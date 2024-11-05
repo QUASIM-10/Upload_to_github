@@ -28,7 +28,7 @@ git diff "filename" : TO CHECK THE DIFFERENCES BETWEEN THE CURRENT VERSION OF fi
 git diff chapter3.txt : THE CURRENT VERSION IS SHOWN IN green color WHILE the OLD VERSION is shown in RED COLOR
 git checkout "filename" : THIS WILL ROLLBACK THE file TO THE LAST VERSION THAT WAS COMMITED IN OUR repository.
 git checkout chapter3.txt : ONCE WE CLICK ON ENTER, IT WILL REVERT BACK TO IT'S OLD VERSION
-git log : TO SEE THE COMMIT MADE.
+git log : TO SEE THE COMMIT MADE.   press q to quit.
 
 TO STAGE ALL FILES EXCEPT A PARTICULAR FILE: To add all files except chapter4.txt in Git, you can use the following commands in VS Code's terminal:
 git add . ":!filename = chapter4.txt" : Stage all files except filename.
@@ -52,7 +52,7 @@ git push -u origin main/master : depending on whether urs is in main or master
 // depending on the size of the folder you want to push to github, this can take various amount of time.
 // Now, head over to github and refresh the page, then we can now see our files hosted on GITHUB.
 
-HOW TO USE .gitignore : FOR CHOOSING FILES NOT TO TRACK(put on github) E.G PASSWORDS, SECURITY, AUTHENTICATION E.T.C:
+HOW TO USE .gitignore : FOR CHOOSING FILES NOT TO TRACK(put on github) E.G node_modules, PASSWORDS, SECURITY, AUTHENTICATION E.T.C:
 USE THE New-Item -Path . -Name ".gitignore" -ItemType "file" TO CREATE A .gitignore FILE
 code .gitignore : USE IT TO OPEN THE FILE AND THEN ADD THE FILES YOU DON'T WANT TO PUSH TO GITHUB :: just type filename.txt(filename.filetype) e.g secrets.txt
     secrets.txt
