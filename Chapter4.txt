@@ -33,3 +33,45 @@ git log : TO SEE THE COMMIT MADE.
 TO STAGE ALL FILES EXCEPT A PARTICULAR FILE: To add all files except chapter4.txt in Git, you can use the following commands in VS Code's terminal:
 git add . ":!filename = chapter4.txt" : Stage all files except filename.
 git add . ":!chapter4.txt"
+
+HOW TO UNSTAGE A FILE:
+IF YOU HAVE initiated the git and ALSO STAGED THE FILES AND YOU WANT TO undo the process:
+git rm --cached -r . : THIS WILL REMOVE ALL THE STAGED FILES
+git status : WE WILL SEE THAT THE FILES HAVE BEEN REMOVED AND ARE NOW SHOWING RED COLOR.
+
+HOW TO PUSH YOUR CODE TO GITHUB:
+NAVIGATE TO "New Repository", SET Repository Name and Description AND BY DEFAULT, IT will be in PUBLIC AND THIS ALLOWS ANYBODY TO SEE/ACCESS THE CODE
+IGNORE THE README file and LEAVE IT UNCHECKED AND THEN CLICK ON Create repository
+YOU CAN EITHER USE THEIR DESKTOP APP TO COMMIT UR CODE OR USE THE COMMAND LINE... THE COMMAND LINE PROCESS:
+Copy the address of the current repository you created.
+NOW GO BACK TO the working directory of the file YOU WANT TO PUSH TO GITHUB IN THE COMMAND LINE(I.E VISUAL STUDIO CODE)
+NOTE: YOU MUST HAVE DONE LINE 26 - 31 BEFORE WANTING TO PUSH TO GITHUB.
+git log : TO CHECK THE OREVIOUS COMMIT.
+git remote add origin "address of the current github repository you created; do not include "", just https://github.com/.....  " : origin is the name of your remote and you can theoretically call it anything BUT THE CONVENTIONAL WAY IS TO USE origin
+git push -u origin main/master : depending on whether urs is in main or master
+// depending on the size of the folder you want to push to github, this can take various amount of time.
+// Now, head over to github and refresh the page, then we can now see our files hosted on GITHUB.
+
+HOW TO USE .gitignore : FOR CHOOSING FILES NOT TO TRACK(put on github) E.G PASSWORDS, SECURITY, AUTHENTICATION E.T.C:
+USE THE New-Item -Path . -Name ".gitignore" -ItemType "file" TO CREATE A .gitignore FILE
+code .gitignore : USE IT TO OPEN THE FILE AND THEN ADD THE FILES YOU DON'T WANT TO PUSH TO GITHUB :: just type filename.txt(filename.filetype) e.g secrets.txt
+    secrets.txt
+    file.js
+    passwordServer.js E.T.C in your .gitignore FILE
+git add .
+git status
+git commit -m "Initial Commit"
+AND FROM HERE, WHEN WE PUSH TO GITHUB, THEN THE FILES IN THE .gitignore FILE WILL NOT BE DISPLAYED
+
+
+GIT PRACTICE WITH node.js: HOW TO ADD A .gitignore FILE TO OUR NODE PROJECT
+npm i : TO INSTALL ALL THE PACKAGES FOUND IN package.json FILE
+USE THE New-Item -Path . -Name ".gitignore" -ItemType "file" TO CREATE A .gitignore FILE CREATE A .gitignore file IN YOUR node project file 
+code .gitignore : TO OPEN THE FILE AND PROCEED TO ADDING THE FILES YOU DO NOT WANT TO DISPLAY IN YOUR github repository
+SEARCH FOR "https://github.com/github/gitignore" ON GOOGLE AND THEN NAVIGATE TO Node.gitignore AND THEN COPY THE pre-built template code 
+THEN PASTE IT IN THE .gitignore file YOU CREATED AND THEN YOU CAN ALSO ADD SOME FILES(IF THEY ARE NOT PRESENT ALREADY IN THE CODE YOU COPIED) TO THE .gitignore file(ADD THE FILE: JUST THE NAME OF THE FILE . TYPE OF THE FILE AS EXPLAINED ABOVE)
+git init
+git add .
+git status
+git commit -m "Initial commit"
+AND NOW GO ON AND ADD ALL THIS TO YOUR GITHUB REPOITORY AND THEN YOU WILL SEE THAT THE FILES IN .gitignore ARE NOT DISPLAYED IN YOUR REPOSITORY.
